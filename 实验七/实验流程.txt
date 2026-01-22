@@ -1,0 +1,28 @@
+《机器学习》课程实验7
+1．环境设置 
+实现 SegNet (https://arxiv.org/abs/1511.00561) 的简化版本，并在提供的多数字 MNIST 数据集上训练/验证你的模型。
+本次作业使用 CPU 运行 PyTorch 即可，在 CPU 上训练简化版 SegNet 大约需要 10 分钟。如果有GPU可以使用GPU。
+环境设置请参考README.md。
+2．实现并训练简化版 SegNet
+请按照 README.md 中的说明安装依赖包，并实现 SegNet 的简化版本。需要训练模型，并在验证集上验证其准确率。
+2.1 实现简化版 SegNet
+在lib/models/seg_net_lite.py中实现SegNet模型， 其他模块（包括数据加载器 dataloader、预处理/后处理以及训练/评估脚本）都已提供，并附带了适当的注释。虽然如果你正确实现了 SegNet 就不需要修改代码库的其他部分，但仍建议阅读代码库，以便充分理解完整流程。
+2.2 训练并验证你的模型
+使用提供的训练和验证脚本来训练和验证你的模型。详细信息可以在所提供代码库的 README.md 中找到。
+训练完运行visualize_simple.py或自己实现脚本验证分割结果。
+使用方法：
+python visualize_simple.py     \
+        --model segnet     \
+        --checkpoint out/checkpoint.pth.tar     \
+        --data data/multi-digit-mnist/testset001.mat     \
+        --save segnet_result.png
+3．提交清单
+提交要求： 请提交训练好的模型（单个文件，命名为 model_best.pth.tar）以及你修改后的 seg_net_lite.py 文件。 注意： 确保seg_net_lite.py 能够加载你提交的模型。
+（按“学号_姓名_班级_实验7.zip”命名，发送至邮箱 aodu@mail.nankai.edu.cn
+├─ model_best.pth.tar 
+├─ seg_net_lite.py
+└─ 实验报告 
+实验报告内容应包括：
+1. 训练和验证过程关键代码段的解释；
+2. 模型分割可视化效果图；
+3. 最终模型mIOU验证得分截图；
